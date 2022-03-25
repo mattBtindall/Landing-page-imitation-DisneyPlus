@@ -1,0 +1,534 @@
+:root {
+  --primary-color: #0063e5;
+  --section-padding: 4rem;
+  --nav-animation-time: .3s;
+  /* font-size on full screens */
+  --main-font-size: 1.25rem; 
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Avenir,sans-serif; 
+  -webkit-font-smoothing: antialiased;
+  background: #000;
+  color: #fff;
+  font-size: var(--main-font-size);
+  font-weight: 800;
+  letter-spacing: .2px;
+}
+
+h1, h2, h3, h4 {
+  color: white;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+/* p {
+  margin: 0.25rem 0;
+  padding: 0.25rem 0;
+} */
+
+img {
+  width: 100%;
+}
+
+i {
+  z-index: 1;
+}
+
+/* Header */
+.header {
+  position: fixed;
+  /* background: #000; */
+  width: 100%;
+  transition: background var(--nav-animation-time) ease-in;
+  z-index: 3;
+}
+
+.header-container {
+  position: relative;
+}
+
+.logo-header {
+  margin: .8rem 0 0 0.8rem;
+  opacity: 0;
+  transition: opacity var(--nav-animation-time) ease-in;
+  cursor: pointer;
+}
+
+.header-btn-container {
+  position: absolute;
+  top: 50%; right: 0;
+  transform: translate(0, -50%);
+}
+
+.header a {
+  z-index: 3;
+}
+
+.header a.btn-solid {
+  opacity: 0;
+  transition: opacity var(--nav-animation-time) ease-in;
+  margin-right: .5rem;
+}
+
+/* Showcase */
+.showcase {
+  height: 100vh;
+  background: url('../img/showcase.jpeg') no-repeat center center/cover;
+  padding: var(--section-padding) 10vh 5vw;
+  position: relative;
+}
+
+.logo-lg {
+  width: 190px;
+}
+
+.showcase-content {
+  width: 55%;
+  margin-top: 2rem;
+}
+
+.showcase h1.text-xl {
+  margin: 1rem 0 2rem 0;
+  line-height: 3.5rem;
+}
+
+.showcase-content-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: space-between;
+}
+
+.showcase-content-grid > div {
+  display: grid;
+  flex-direction: row;
+  grid-template-rows: 1fr 1fr 1.5fr;
+  width: 87.5%;
+  gap: 15px;
+}
+
+.showcase-content .btn {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+p.text-xsm {
+  margin-top: 20px;
+}
+
+.icon-move-down {
+  position: absolute;
+  bottom: 7.5%; right: 6%;
+  cursor: pointer;
+  color: #999;
+  transition: color .3s ease-in-out;
+  animation: down-icon 2s ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.icon-move-down:hover {
+  color: #fff;
+  cursor: pointer;
+}
+
+@keyframes down-icon {
+  0% {
+    transform: translateY(0);
+  }
+
+  25% {
+    transform: translateY(-20px);
+  }
+
+  40% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+
+  /* this bit at the end delays between iterations */
+  60% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Features */
+.features-container {
+  width: 90% !important;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  /* grid-gap: 3rem; */
+  column-gap: 3rem;
+  padding: var(--section-padding) 0;
+}
+
+.features-container img {
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.features-container > div {
+  width: 95%;
+}
+
+.features-container h1 {
+  margin-left: -1.5rem;
+  margin-bottom: 1rem;
+}
+
+.features-container ul  {
+  margin-left: 1rem;
+  width: 90%;
+}
+
+.features-container li {
+  margin-bottom: 1.5rem;
+  /* line-height: 1.5rem; */
+}
+
+/* splitter */
+.btn-splitter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40vh;
+}
+
+/* devices */
+.devices {
+  text-align: center;
+  padding: var(--section-padding) 0;
+  line-height: 2rem;
+}
+
+.devices-container {
+  width: 87.5% !important;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.devices > h1 {
+  margin-bottom: 2rem;
+}
+
+.devices-container li{
+  list-style: none;
+}
+
+/* FAQ accordian */
+.faq {
+  padding: var(--section-padding);
+}
+
+.faq-item {
+  background: #13151d;
+  overflow: hidden;
+  margin: 1rem auto;
+  max-height: 1000px;
+  transition: max-height .2s ease-in;
+}
+
+.faq-title {
+  user-select: none;
+}
+
+.faq-item i.fa-plus {
+  display: none;
+}
+
+.faq h1.text-xl {
+  text-align: center;
+}
+
+.faq-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.faq-content {
+  padding: 1rem;
+}
+
+.faq ul {
+  margin-left: var(--main-font-size);
+}
+
+.faq li {
+  list-style-type: initial;
+}
+
+.faq-item.collapsed {
+  max-height: 4rem;
+}
+
+.collapsed i.fa-plus {
+  display: inline-block;
+}
+
+.collapsed i.fa-minus {
+  display: none;
+}
+
+.faq-content ol {
+  list-style-type: initial;
+  margin-left: 1.25rem;
+}
+
+.faq a[href="https://help.disneyplus.com/csp?id=csp_article_content&sys_kb_id=af34a1bedbd4541cc2deeacb1396197e"] {
+  text-decoration: underline;
+}
+
+/* Footer */
+.footer {
+  padding: var(--section-padding) 0 calc(var(--section-padding) / 2) 0;
+  text-align: center;
+  font-size: 12px;
+  line-height: 2rem;
+  letter-spacing: .2px;
+}
+
+.footer-container {
+  width: 87.5%;
+  margin: auto;
+}
+
+.footer a {
+  padding: 8px 12px;
+  cursor: pointer;
+  white-space: nowrap;
+  font-weight: 400;
+  color: silver;
+}
+
+.footer a:hover {
+  color: white;
+}
+
+/* Utility */
+.container {
+  width: 95%;
+  margin: auto;
+}
+
+.text-dark {
+  color: silver;
+}
+
+.text-xl {
+  font-size: 2.75rem;
+}
+
+.text-lg {
+  font-size: 1.8rem;
+}
+
+.text-sm {
+  font-size: 1rem;
+}
+
+.text-xsm {
+  font-size: .8rem;
+}
+
+.logo-sm {
+  width: 85px;
+}
+
+.btn {
+  text-transform: uppercase;
+  display: inline-block;
+  color: #fff;
+  padding: .8rem 1rem;
+  font-size: 1.1rem;
+  text-align: center;
+  border: 1px solid #fff;
+  cursor: pointer;
+  outline: none; /* remove annoying looking outline */
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.45);
+  border-radius: 5px;
+  transition: all .3s ease-in-out;
+  letter-spacing: .08rem;
+  z-index: 2;
+  text-align: center;
+}
+
+.btn-clear {
+  background:rgba(0, 0, 0, 0.5);
+}
+
+.btn-clear:hover {
+  color: #000;
+  background: white;
+}
+
+.btn-solid {
+  background: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+
+.btn-solid:hover {
+  opacity: 0.9;
+}
+
+.btn-xl {
+  padding: 1.2rem 6rem !important;
+}
+
+.animate-height {
+  transition: all 1s ease-in-out;
+}
+
+@media(max-width: 1024px) {
+  body {
+    font-weight: bold;
+  }
+
+  .showcase-content {
+    width: 70%;
+  }
+
+  .showcase h1 {
+    margin: .5rem 0;
+    line-height: 2rem;
+  }
+
+  /* utility */
+  .text-xl {
+    font-size: 2rem;
+  }
+
+  .text-lg {
+    font-size: 1.3rem;
+  }
+  
+  .text-sm {
+    font-size: .9rem;
+  }
+  
+  .text-xsm {
+    font-size: .8rem;
+  }
+}
+
+@media(max-width: 770px) { 
+  :root {
+    --main-font-size: 1rem;   
+  }
+
+  .showcase {
+    background-image: url('../img/showcaseMobile.jpeg');
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 40vw 5vw 20vw;
+    height: auto;
+    text-align: center;
+  }
+
+  .logo-lg {
+    width: 140px;
+  }
+
+  .showcase h1.text-xl {
+    line-height: 2rem;
+  }
+
+  .showcase-content {
+    margin: auto;
+    text-align: center;
+    /* width: 50%; */
+    max-width: 400px;
+  }
+
+  .showcase-content-grid {
+    text-align: center;
+    grid-template-columns: 1fr;
+  }
+
+  .showcase-content-grid > div {
+    gap: 5px;
+    width: 100%;
+  }
+  
+  .showcase-content-grid div:last-child p:first-child{
+    border-top: 2px solid rgba(192,192,192,.5);
+    margin-top: .5rem !important;
+    padding-top: .5rem !important;
+  }
+
+  .icon-move-down {
+    bottom: 5%;
+    right: 50%;
+  }
+
+  /* features */
+  .features-container {
+    grid-template-columns: 1fr;
+    width: 85% !important;
+  }
+
+  .features-container h1 {
+    margin: 1.5rem 0;
+    text-align: center;
+  }
+
+  /* devices */
+  .devices-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* FAQ */
+  .faq {
+    padding: calc(var(--section-padding) / 2);
+  }
+
+  /* utility */
+  .text-xl {
+    font-size: 1.5rem;
+  }
+
+  .text-lg {
+    font-size: 1rem;
+  }
+  
+  .text-sm {
+    font-size: .8rem;
+  }
+  
+  .text-xsm {
+    font-size: .6rem;
+  }
+
+  .hide-sm {
+    display: none;
+  }
+  
+  .btn {
+    padding: .65rem .5rem;
+    font-size: 0.9rem;
+  }
+}
